@@ -8,28 +8,34 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Main {
-    private float temp;
+    private float temperature;
     private float pressure;
     private float humidity;
-    private float temp_min;
-    private float temp_max;
+    private float temperature_min;
+    private float temperature_max;
 
-    public void Main(){}
+    public Main(float temperature, float pressure, float humidity){
+        this.setTemperature(temperature);
+        this.setPressure(pressure);
+        this.setHumidity(humidity);
+//        this.setTemperature_min(temperature_min);
+//        this.setTemperature_max(temperature_max);
+    }
 
     @Override
     public String toString(){
-        return  "Temperature: " + temp + "\n" +
+        return  "Temperature: " + temperature + "\n" +
                 "Pressure: " + pressure + "\n" +
                 "Humidity: " + humidity + "\n";
     }
 
 
-    public float getTemp() {
-        return temp;
+    public float getTemperature() {
+        return temperature;
     }
 
-    public void setTemp(float temp) {
-        this.temp = temp;
+    public void setTemperature(float temperature) {
+        this.temperature = temperature;
     }
 
     public float getPressure() {
@@ -48,19 +54,19 @@ public class Main {
         this.humidity = humidity;
     }
 
-    public float getTemp_min() {
-        return temp_min;
+    public float getTemperature_min() {
+        return temperature_min;
     }
 
-    public void setTemp_min(float temp_min) {
-        this.temp_min = temp_min;
+    public void setTemperature_min(float temperature_min) {
+        this.temperature_min = temperature_min;
     }
 
-    public float getTemp_max() {
-        return temp_max;
+    public float getTemperature_max() {
+        return temperature_max;
     }
 
-    public void setTemp_max(float temp_max) {
-        this.temp_max = temp_max;
+    public void setTemperature_max(float temperature_max) {
+        this.temperature_max = temperature_max;
     }
 }

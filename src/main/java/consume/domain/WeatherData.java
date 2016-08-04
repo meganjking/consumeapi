@@ -10,6 +10,7 @@ import consume.domain.Coord;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class WeatherData {
+    private WeatherData weatherData;
 
     private Coord coord;
 //    private Weather weather;
@@ -24,7 +25,12 @@ public class WeatherData {
     private String name;
 //    private int cod;
 
-    public WeatherData(){}
+    public WeatherData(String name, float latitude, float longitude, float temperature,
+                       float pressure, float humidity){
+        this.name = name;
+        this.setCoord(new Coord(latitude, longitude));
+        this.setMain(new Main(temperature, pressure, humidity));
+    }
 
     public Coord getCoord(){
         return coord;
@@ -33,14 +39,6 @@ public class WeatherData {
     public void setCoord(Coord coord){
         this.coord = coord;
     }
-
-//    public Weather getWeather(){
-//        return weather;
-//    }
-//
-//    public void setWeather(Weather weather){
-//        this.weather = weather;
-//    }
 
     public Main getMain(){
         return main;

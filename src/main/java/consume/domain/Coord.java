@@ -12,28 +12,29 @@ public class Coord {
     private float lon;
     private float lat;
 
-    public Coord(){}
-
-
+    public Coord(float lat, float lon){
+        this.setLatitude(lat);
+        this.setLongitude(lon);
+    }
 
     @Override
     public String toString(){
         return "Coordinates: lon= " + lon + ", lat= " + lat + "\n";
     }
 
-    public float getLon() {
+    public float getLongitude() {
         return lon;
     }
 
-    public void setLon(float lon) {
+    public void setLongitude(float lon) {
         this.lon = lon;
     }
 
-    public float getLat() {
+    public float getLatitude() {
         return lat;
     }
 
-    public void setLat(float lat) {
+    public void setLatitude(float lat) {
         this.lat = lat;
     }
 }
